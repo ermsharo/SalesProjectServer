@@ -15,7 +15,25 @@ class SellerSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class SaleSerializer(serializers.ModelSerializer):
+class SellerDetail(serializers.ModelSerializer):
+    class Meta:
+        model = Sale
+        fields = "__all__"
+
+
+class Client_agent(serializers.ModelSerializer):
+    class Meta:
+        model = Sale
+        fields = "__all__"
+
+
+class Seller_agent(serializers.ModelSerializer):
+    class Meta:
+        model = Sale
+        fields = "__all__"
+
+
+class Sale_agent(serializers.ModelSerializer):
     class Meta:
         model = Sale
         fields = "__all__"
