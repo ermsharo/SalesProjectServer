@@ -26,9 +26,6 @@ class Client_agent(models.Model):
 class Sale(models.Model):
     fiscal_number = models.CharField(max_length=256)
     sale_moment = models.DateTimeField(auto_now=True)
-    client = models.IntegerField()
-    seller = models.IntegerField()
-    product_list =  ArrayField(
-        models.IntegerField(),
-        default=list,
-    )
+    client = models.ForeignKey(Seller_agent, on_delete=models.CASCADE)
+    seller = models.ForeignKey(Client_agent, on_delete=models.CASCADE)
+    product_list = models.ManyToManyField(Product)
